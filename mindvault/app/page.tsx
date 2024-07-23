@@ -3,6 +3,8 @@ import Image from "next/image";
 import { SignInButton, UserButton } from "@clerk/clerk-react";
 import { Authenticated, Unauthenticated, useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 export default function Home() {
   const documents = useQuery(api.documents.getDocuments);
@@ -24,6 +26,7 @@ export default function Home() {
       </Unauthenticated>
       <Authenticated>
         <UserButton />
+        <ModeToggle/>
         <button
           onClick={() => {
             createDocument({ title: "Hello world" });
@@ -34,6 +37,7 @@ export default function Home() {
         {documents.map((doc) => (
           <div key={doc._id}>{doc.title}</div>
         ))}
+        <Button>Aur Bantai</Button>
       </Authenticated>
     </main>
   );
