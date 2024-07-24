@@ -6,7 +6,7 @@ import { api } from "@/convex/_generated/api";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { DocumentCard } from "./document-card";
-import CreateDocumentButton from "./create-document-button";
+import CreateDocumentButton from "./upload-document-button";
 
 export default function Home() {
   const documents = useQuery(api.documents.getDocuments);
