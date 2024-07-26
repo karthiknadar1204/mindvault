@@ -22,7 +22,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export function DeleteDocumentButton({
-  documentId,
+  documentId, 
 }: {
   documentId: Id<"documents">;
 }) {
@@ -44,7 +44,7 @@ export function DeleteDocumentButton({
             Are you sure you want to delete this document?
           </AlertDialogTitle>
           <AlertDialogDescription>
-            Your document can not be recovered after it's been deleted.
+            Your document can not be recovered after it has been deleted.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
