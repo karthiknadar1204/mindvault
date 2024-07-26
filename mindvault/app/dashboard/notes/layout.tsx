@@ -14,10 +14,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function NotesLayout({ children }: { children: ReactNode }) {
 //   const organization = useOrganization();
-//   const notes = useQuery(api.notes.getNotes, {
-//     orgId: organization.organization?.id,
-//   });
-//   const { noteId } = useParams<{ noteId: Id<"notes"> }>();
+  const notes = useQuery(api.notes.getNotes);
+  const { noteId } = useParams<{ noteId: Id<"notes"> }>();
 
   return (
     <main className="w-full space-y-8">
@@ -26,7 +24,7 @@ export default function NotesLayout({ children }: { children: ReactNode }) {
         <CreateNoteButton />
       </div>
 
-      {/* {!notes && (
+      {!notes && (
         <div className="flex gap-12">
           <div className="w-[200px] space-y-4">
             <Skeleton className="h-[20px] w-full" />
@@ -41,9 +39,9 @@ export default function NotesLayout({ children }: { children: ReactNode }) {
             <Skeleton className="h-[400px] w-full" />
           </div>
         </div>
-      )} */}
+      )}
 
-      {/* {notes?.length === 0 && (
+      {notes?.length === 0 && (
         <div>
           <div className="py-12 flex flex-col justify-center items-center gap-8">
             <Image
@@ -56,9 +54,9 @@ export default function NotesLayout({ children }: { children: ReactNode }) {
             <CreateNoteButton />
           </div>
         </div>
-      )} */}
+      )}
 
-      {/* {notes && notes.length > 0 && (
+      {notes && notes.length > 0 && (
         <div className="flex gap-12">
           <ul className="space-y-2 w-[300px]">
             {notes?.map((note) => (
@@ -80,7 +78,7 @@ export default function NotesLayout({ children }: { children: ReactNode }) {
 
           <div className="w-full">{children}</div>
         </div>
-      )} */}
+      )}
     </main>
   );
 }
